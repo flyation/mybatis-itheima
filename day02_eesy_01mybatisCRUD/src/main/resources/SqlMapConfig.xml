@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 可以在这里引用外部配置文件 -->
+    <properties resource="jdbcConfig.properties"/>
+<!--    <properties url="file:///D:/IdeaProjects/mybatis-itheima/day02_eesy_01mybatisCRUD/src/main/resources/jdbcConfig.properties"/>-->
+
+    <!-- 可以在这里配置别名，配置别名后就不再区分大小写 -->
+    <typeAliases>
+        <!-- 给单个类配置别名 -->
+<!--        <typeAlias type="com.itheima.domain.User" alias="user"/>-->
+        <!-- 给包下的所有类配置别名，别名为类名 -->
+        <package name="com.itheima.domain"/>
+    </typeAliases>
+
+    <!-- 配置环境 -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <!-- 事务类型 -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 数据源（连接池）-->
+            <dataSource type="POOLED">
+<!--                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://121.199.7.212:3306/eesy_mybatis"/>-->
+<!--                <property name="username" value="root"/>-->
+<!--                <property name="password" value="123456"/>-->
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 配置映射文件 -->
+    <mappers>
+        <!-- 配置单个mapper -->
+<!--        <mapper resource="com/itheima/dao/IUserDao.xml"/>-->
+        <!-- 指定dao接口所在的包，指定后就无需再写<mapper>标签了 -->
+        <package name="com.itheima.dao"/>
+    </mappers>
+</configuration>
