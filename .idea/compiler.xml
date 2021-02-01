@@ -7,7 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="day03_eesy_02dynamicSQL" />
         <module name="day02_eesy_01mybatisCRUD" />
+        <module name="day03_eesy_01datasourceAndTx" />
         <module name="day01_eesy_01mybatis" />
       </profile>
     </annotationProcessing>
