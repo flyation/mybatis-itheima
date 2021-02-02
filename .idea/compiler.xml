@@ -11,6 +11,7 @@
         <module name="day02_eesy_01mybatisCRUD" />
         <module name="day03_eesy_01datasourceAndTx" />
         <module name="day01_eesy_01mybatis" />
+        <module name="day03_eesy_03one2many" />
       </profile>
     </annotationProcessing>
   </component>

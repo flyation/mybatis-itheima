@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/day01_eesy_01mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/day03_eesy_01datasourceAndTx/pom.xml" />
         <option value="$PROJECT_DIR$/day03_eesy_02dynamicSQL/pom.xml" />
+        <option value="$PROJECT_DIR$/day03_eesy_03one2many/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.IAccountDao">
+
+    <!-- 定义封装账户和用户的映射 -->
+    <resultMap id="accountUserMap" type="Account">
+        <id property="id" column="aid"/>
+        <result property="uid" column="uid"/>
+        <result property="money" column="money"/>
+        <!-- 一对一映射 -->
+        <association property="user" column="uid" javaType="User">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+            <result property="birthday" column="birthday"/>
+            <result property="sex" column="sex"/>
+            <result property="address" column="address"/>
+        </association>
+    </resultMap>
+
+    <!-- 查询所有 -->
+    <select id="findAll" resultType="Account">
+        select * from account
+    </select>
+
+    <!-- 查询所有账户同时包含用户信息 -->
+    <select id="findAllAccount" resultMap="accountUserMap">
+        select u.*, a.id aid, a.uid, a.money from account a, user u where a.UID = u.id;
+    </select>
+</mapper>
